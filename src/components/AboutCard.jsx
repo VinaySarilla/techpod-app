@@ -84,25 +84,31 @@ export default function AboutCard() {
       <motion.div initial="hidden" animate="visible" variants={list}>
         <div className="flex justify-around">
           <button
-            className="px-4 m-2 text-slate-800 rounded-md text-lg bg-slate-300"
+            className={`p-4 m-2 text-slate-800 rounded-md text-lg ${
+              show === 0 ? `bg-slate-300` : ""
+            }`}
             onClick={() => setShow(0)}
             key="1"
           >
-            <img src="/src/public/home.png" width="30px" />
+            <img src="/home.png" width="30px" />
           </button>
           <button
-            className="p-4 m-2 text-slate-800 rounded-md text-lg"
+            className={`p-4 m-2 text-slate-800 rounded-md text-lg ${
+              show === 1 ? `bg-slate-300` : ""
+            }`}
             onClick={() => setShow(1)}
             key="2"
           >
-            <img src="/src/public/team-icon.png" width="30px" />
+            <img src="/team-icon.png" width="30px" />
           </button>
           <button
-            className="p-4 m-2 text-slate-800 rounded-md text-lg"
+            className={`p-4 m-2 text-slate-800 rounded-md text-lg ${
+              show === 2 ? `bg-slate-300` : ""
+            }`}
             key="3"
             onClick={() => setShow(2)}
           >
-            <img src="/src/public/heart.png" width="30px" />
+            <img src="/heart.png" width="30px" />
           </button>
         </div>
       </motion.div>
@@ -113,7 +119,7 @@ export default function AboutCard() {
 const HomePage = () => {
   return (
     <div>
-      <img src="/src/public/team.png" />
+      <img src="/team.png" />
       <div className="p-4">
         <h1 className="text-slate-800 text-3xl font-bold leading-10">
           Convert your Interesting{" "}
@@ -130,7 +136,7 @@ const HomePage = () => {
 const TeamPage = () => {
   return (
     <div>
-      <img src="/src/public/work.png" />
+      <img src="/work.png" />
       <div className="p-4">
         <h1 className="text-white text-3xl font-bold leading-10">
           Meet our <span className="text-4xl text-fuchsia-900">Team</span>
@@ -144,7 +150,7 @@ const TeamPage = () => {
 const ContactPage = () => {
   return (
     <div>
-      <img src="/src/public/review.png" />
+      <img src="/review.png" />
       <div className="p-4">
         <h1 className="text-slate-800 text-3xl font-bold leading-10">
           Read what our{" "}
