@@ -14,11 +14,10 @@ export default function ProjectCard() {
     projects.map((pro, i) => {
       newCards.push(getCard(pro, i));
     });
-    newCards.push(techCard())
     setCards(newCards);
   }, []);
 
-  const techCard = () => {
+  const TechCard = () => {
     return (
       <motion.div
         initial={{ opacity: 0 }}
@@ -61,10 +60,24 @@ export default function ProjectCard() {
       </motion.div>
     );
   };
+
   return (
-    <>
+    <div className="text-center">
       <AnimatePresence exitBeforeEnter>{cards && cards[card]}</AnimatePresence>
-      <button onClick={() => setCard(card + 1)}>Next</button>
-    </>
+      <button
+        className="bg-slate-50 ring-2 ring-slate-700 rounded-xl py-2 px-4"
+        onClick={() => {
+          if (card < 1) {
+            setCard(card + 1);
+          } else {
+            setCard(0);
+          }
+        }}
+      >
+        Next
+      </button>
+
+      <TechCard />
+    </div>
   );
 }

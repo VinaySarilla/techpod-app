@@ -75,6 +75,26 @@ export default function AboutCard() {
           >
             <div className="">
               <div className="bg-slate-100 w-full h-[90vh] p-4">
+                <ReviewPage />
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {show === 3 && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{
+              opacity: 0,
+            }}
+            key="3"
+            transition={{
+              default: { duration: 0.1 },
+            }}
+          >
+            <div className="">
+              <div className="bg-slate-100 w-full h-[90vh] p-4">
                 <ContactPage />
               </div>
             </div>
@@ -92,6 +112,7 @@ export default function AboutCard() {
           >
             <img src="/home.png" width="25px" />
           </button>
+
           <button
             className={`p-2 text-slate-800 rounded-md text-lg ${
               show === 1 ? `bg-slate-300` : ""
@@ -101,6 +122,7 @@ export default function AboutCard() {
           >
             <img src="/team-icon.png" width="25px" />
           </button>
+
           <button
             className={`p-2 text-slate-800 rounded-md text-lg ${
               show === 2 ? `bg-slate-300` : ""
@@ -155,11 +177,25 @@ const TeamPage = () => {
     <div>
       <img src="/work.png" />
       <div className="p-4">
-        <h1 className="text-white text-3xl font-bold leading-10">
-          Meet our <span className="text-4xl text-fuchsia-900">Team</span>
+        <h1 className="text-slate-800 text-3xl font-bold leading-10">
+          <span className="text-4xl">Amazing Team</span>
         </h1>
       </div>
-      <div className="p-4"></div>
+
+      <div className="p-4 bg-slate-50 rounded-lg text-slate-900 my-3">
+        <p className="text-3xl font-bold">Vinay Sarilla</p>
+        <p className="text-xl ">Co-founder & Product Developer</p>
+      </div>
+
+      <div className="p-4 bg-slate-50 rounded-lg text-slate-900 my-3">
+        <p className="text-3xl font-bold">Payal Bari</p>
+        <p className="text-xl">Co-founder & Sales Lead</p>
+      </div>
+
+      <div className="p-4 bg-slate-50 rounded-lg text-slate-900 my-3">
+        <p className="text-3xl font-bold">Shraddha Dudani</p>
+        <p className="text-xl">Content Specialist/Strategist</p>
+      </div>
     </div>
   );
 };
@@ -185,15 +221,28 @@ const ContactPage = () => {
   return (
     <div>
       <img src="/review.png" />
-      <div className="p-4">
-        <h1 className="text-slate-800 text-3xl font-bold leading-10">
-          Read what our{" "}
-          <span className="text-4xl text-fuchsia-900">Clients & Friends</span>{" "}
-          say about us{" "}
-        </h1>
-      </div>
+      <div className="flex flex-col gap-10 justify-between">
+        <div className="p-4 text-center">
+          <h1 className="text-slate-800 text-3xl font-bold leading-10">
+            <span className="text-4xl text-slate-900">Connect</span>
+          </h1>
+        </div>
 
-      <div className="p-4"></div>
+        <div className="flex justify-around">
+          <a href="https://wa.me/9326161933">
+            <img src="/whatsapp.png" className="w-16 h-16" />
+          </a>
+          <a href="https://www.instagram.com/techpod.in/">
+            <img src="/instanew.png" className="w-16 h-16" />
+          </a>
+        </div>
+
+        <div className="m-4 font-bold">
+          <p className="text-3xl text-center">
+            Feel free to reach out to us for any queries
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
